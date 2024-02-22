@@ -79,7 +79,7 @@ class DDPG():
         pred = self.actor(state).detach()
         if exploreNoise:
             pred += 0.1*self.exploreDistr.sample().to(device)
-        return pred.numpy()[0]
+        return pred.cpu().numpy()[0]
 
     def train_step(self, replay, batch_count):
         

@@ -1,5 +1,5 @@
 import torch
-import gym
+import gymnasium as gym
 
 if torch.cuda.is_available():
     print(torch.cuda.current_device())
@@ -20,7 +20,7 @@ def demoGPU():
     c.backward()
     print(x.grad)
     print(c)
-    env = gym.make('BipedalWalker-v3')
+    env = gym.make('HalfCheetah-v4')
     print("Done Env1!")
     assert False
 
